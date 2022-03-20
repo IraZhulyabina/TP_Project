@@ -10,13 +10,12 @@
 
 class WindowHandler {
  public:
-  WindowHandler(Coord2u shape, std::string &title);
-  const sf::RenderWindow &GetWindow() const;
-  const Coord2u &GetShape() const;
+  WindowHandler(sf::RenderWindow &window);
+  sf::RenderWindow & GetWindow() const;
+  Coord2u GetShape() const;
 
  private:
-  sf::RenderWindow window_;
-  Coord2u shape_;
+  sf::RenderWindow* window_;
 };
 
 #endif //TP_SOURCES_HANDLERS_WINDOWHANDLER_H_

@@ -4,15 +4,11 @@
 
 #include "../../include/Handlers/WindowHandler.h"
 
-const sf::RenderWindow &WindowHandler::GetWindow() const {
-  return window_;
+const sf::RenderWindow& WindowHandler::GetWindow() const {
+  return *window_;
 }
 
-WindowHandler::WindowHandler(Coord2u shape, std::string &title):
-    window_(sf::VideoMode(static_cast<size_t>(shape.x),
-                          static_cast<size_t>(shape.y)), title),
-    shape_(shape) {}
-
-const Coord2u &WindowHandler::GetShape() const {
-  return shape_;
+Coord2u WindowHandler::GetShape() const {
+  return window_->getSize();
 }
+WindowHandler::WindowHandler(sf::RenderWindow &window): window_(&window) {}
