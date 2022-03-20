@@ -15,10 +15,10 @@ class Game {
   Game(sf::RenderWindow& window_);
   bool Init();
   bool HandleEvents();
-  void UpdatePhysics();
-  void UpdateGraphics();
-  void Draw();
-  bool EndGame();
+//  void UpdatePhysics();
+//  void UpdateGraphics();
+//  void Draw();
+//  bool EndGame();
 
   bool IsRunning() const;
 
