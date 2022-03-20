@@ -4,7 +4,7 @@
 
 #include "../../include/Handlers/WindowHandler.h"
 
-const sf::RenderWindow& WindowHandler::GetWindow() const {
+sf::RenderWindow & WindowHandler::GetWindow() const {
   return *window_;
 }
 

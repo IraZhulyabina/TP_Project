@@ -12,6 +12,7 @@
 
 class Game {
  public:
+  Game(sf::RenderWindow& window_);
   bool Init();
   bool HandleEvents();
   void UpdatePhysics();
@@ -19,12 +20,16 @@ class Game {
   void Draw();
   bool EndGame();
 
+  bool IsRunning() const;
+
  private:
   MapHandler map_handler_;
   EventHandler event_handler_;
   ObjectHandler object_handler_;
   Drawer drawer_;
   WindowHandler window_handler_;
+
+  bool is_running = false;
 };
 
 #endif //TP_SOURCES_GAME_H_
