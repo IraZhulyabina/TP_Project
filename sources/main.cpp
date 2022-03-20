@@ -9,8 +9,7 @@ int main() {
   Game game(window);
 
   while (window.isOpen() && game.IsRunning()) {
-    // game.HandleEvents();
-
+    if(!game.HandleEvents()) continue;
   }
 
   return 0;
