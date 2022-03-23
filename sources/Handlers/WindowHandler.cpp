@@ -31,3 +31,7 @@ void WindowHandler::SetTitle(const std::string &title) {
 bool WindowHandler::IsOpen() {
   return window_.isOpen();
 }
+
+void WindowHandler::CloseWindow() {
+  window_.close();
+}

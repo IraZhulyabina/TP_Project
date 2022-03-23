@@ -18,6 +18,7 @@ class WindowHandler {
   const std::string &GetTitle() const;
   void SetTitle(const std::string &title);
   bool IsOpen();
+  void CloseWindow();
 
  private:
   sf::RenderWindow window_;
