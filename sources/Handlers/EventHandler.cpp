@@ -10,7 +10,7 @@ bool EventHandler::WindowEvents(WindowHandler &window_handler) {
   while (window.pollEvent(event)) {
     switch (event.type) {
       case (sf::Event::Closed):
-        window.close();
+        window_handler.CloseWindow();
         return false;
 
       case (sf::Event::LostFocus):
@@ -18,9 +18,14 @@ bool EventHandler::WindowEvents(WindowHandler &window_handler) {
         break;
 
       case (sf::Event::KeyPressed):
-        if (event.key.code == sf::Keyboard::Space) {}
-        // TODO "jump" on space
-        break;
+        if (event.key.code == sf::Keyboard::Space) {
+          // TODO "jump" on space
+          break;
+        }
+        if (event.key.code == sf::Keyboard::Escape) {
+          window_handler.CloseWindow();
+          return false;
+        }
 
       default:
         continue;
