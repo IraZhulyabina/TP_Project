@@ -4,11 +4,30 @@
 
 #include "../../include/Handlers/WindowHandler.h"
 
-sf::RenderWindow & WindowHandler::GetWindow() const {
-  return *window_;
+sf::RenderWindow& WindowHandler::GetWindow() {
+  return window_;
 }
 
 Coord2u WindowHandler::GetShape() const {
-  return window_->getSize();
+  return window_.getSize();
 }
-WindowHandler::WindowHandler(sf::RenderWindow &window): window_(&window) {}
+
+WindowHandler::WindowHandler() = default;
+
+void WindowHandler::InitWindow(Coord2u shape, const std::string &title) {
+  title_ = title;
+  window_.create(sf::VideoMode(shape.x, shape.y), title);
+}
+
+const std::string &WindowHandler::GetTitle() const {
+  return title_;
+}
+
+void WindowHandler::SetTitle(const std::string &title) {
+  title_ = title;
+  window_.setTitle(title_);
+}
+
+bool WindowHandler::IsOpen() {
+  return window_.isOpen();
+}
