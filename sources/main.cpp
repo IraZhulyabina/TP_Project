@@ -4,12 +4,12 @@
 #include "../include/main.h"
 
 int main() {
-  sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
+  Game game;
+  game.Init();
 
-  Game game(window);
-
-  while (window.isOpen() && game.IsRunning()) {
+  while (game.IsWindowOpened() && game.IsRunning()) {
     if(!game.HandleEvents()) continue;
+
   }
 
   return 0;
