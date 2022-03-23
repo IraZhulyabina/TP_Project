@@ -12,7 +12,8 @@
 
 class Game {
  public:
-  Game(sf::RenderWindow& window_);
+  Game();
+
   bool Init();
   bool HandleEvents();
 //  void UpdatePhysics();
@@ -21,6 +22,7 @@ class Game {
 //  bool EndGame();
 
   bool IsRunning() const;
+  bool IsWindowOpened();
 
  private:
   MapHandler map_handler_;
