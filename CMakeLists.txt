@@ -4,7 +4,7 @@ project(TP)
 set(CMAKE_CXX_STANDARD 17)
 
 set(SOURCES
-        sources/main.cpp
+        sources/main.cpp include/main.h
         sources/Game.cpp include/Game.h
         sources/Handlers/EventHandler.cpp include/Handlers/EventHandler.h
         sources/Handlers/ObjectHandler.cpp include/Handlers/ObjectHandler.h
@@ -22,7 +22,8 @@ set(SOURCES
         sources/Entities/Chest.cpp include/Entities/Chest.h
         sources/Entities/MainCharacter.cpp include/Entities/MainCharacter.h
         sources/Entities/Enemy.cpp include/Entities/Enemy.h
-        sources/Entities/Physics.cpp sources/Entities/Physics.h sources/Handlers/WindowHandler.cpp include/Handlers/WindowHandler.h include/main.h)
+        sources/Entities/Physics.cpp sources/Entities/Physics.h
+        sources/Handlers/WindowHandler.cpp include/Handlers/WindowHandler.h)
 
 find_package(SFML 2.5 COMPONENTS graphics audio REQUIRED)
 

@@ -4,16 +4,25 @@
 
 #include "../include/Game.h"
 bool Game::Init() {
-  return false;
+  window_handler_.InitWindow({800, 800}, "Game");
+  // TODO make loadable settings of window
+  window_handler_.GetWindow().setVerticalSyncEnabled(true);
+  return true;
 }
-Game::Game(sf::RenderWindow& window_): window_handler_(window_),
-    event_handler_(window_) {
+
+Game::Game() {
   is_running = true;
 }
+
 bool Game::IsRunning() const {
   return is_running;
 }
+
 bool Game::HandleEvents() {
-  is_running = is_running && event_handler_.WindowInteractions();
+  is_running = is_running && event_handler_.WindowEvents(window_handler_);
   return is_running;
+}
+
+bool Game::IsWindowOpened() {
+  return window_handler_.IsOpen();
 }
