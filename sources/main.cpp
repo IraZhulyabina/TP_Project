@@ -6,7 +6,8 @@ int main() {
 
   while (game.IsWindowOpened() && game.IsRunning()) {
     if(!game.HandleEvents()) continue;
-
+    game.UpdateGraphics();
+    game.Draw();
   }
 
   return 0;
