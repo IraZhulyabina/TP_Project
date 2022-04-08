@@ -5,7 +5,7 @@
 #ifndef TP_SOURCES_GAME_H_
 #include "Handlers/EventHandler.h"
 #include "Handlers/ObjectHandler.h"
-#include "Handlers/Drawer.h"
+#include "include/drawing/Drawer.h"
 #include "Handlers/MapHandler.h"
 #include "Handlers/WindowHandler.h"
 #define TP_SOURCES_GAME_H_
@@ -17,8 +17,8 @@ class Game {
   bool Init();
   bool HandleEvents();
 //  void UpdatePhysics();
-//  void UpdateGraphics();
-//  void Draw();
+  void UpdateGraphics();
+  void Draw();
 //  bool EndGame();
 
   bool IsRunning() const;

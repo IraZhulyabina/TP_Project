@@ -7,6 +7,7 @@ bool Game::Init() {
   window_handler_.InitWindow({800, 800}, "Game");
   // TODO make loadable settings of window
   window_handler_.GetWindow().setVerticalSyncEnabled(true);
+  drawer_.Init();  // TODO: catch exceptions
   return true;
 }
 
@@ -25,4 +26,12 @@ bool Game::HandleEvents() {
 
 bool Game::IsWindowOpened() {
   return window_handler_.IsOpen();
+}
+
+void Game::UpdateGraphics() {
+  drawer_.UpdateTargets();
+}
+
+void Game::Draw() {
+  drawer_.DrawEntities(window_handler_.GetWindow());
 }
