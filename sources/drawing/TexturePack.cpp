@@ -21,7 +21,7 @@ TexturePack::TexturePack(const std::string &filename) {
   tile_shape_.y /= static_cast<int32_t>(table_shape_.y);
 
   texture_ = new sf::Texture();
-  texture_->loadFromImage(image);  // !!! не факт, что можно удалять image.
+  texture_->loadFromImage(image);
 }
 
 sf::Texture *TexturePack::GetTexture() const { return texture_; }

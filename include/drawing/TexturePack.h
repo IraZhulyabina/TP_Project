@@ -12,12 +12,8 @@
 
 class TexturePack {  // носитель текстуры, то есть множества тайлсетов
  public:
-  TexturePack() = delete;
-
+  TexturePack() = default;
   explicit TexturePack(const std::string& filename);
-
-  TexturePack(const TexturePack&) = default;
-  TexturePack& operator=(const TexturePack&) = default;
   ~TexturePack();
 
   sf::Texture* GetTexture() const;
@@ -28,5 +24,5 @@ class TexturePack {  // носитель текстуры, то есть мно�
   std::string filename_;
   Coord2i tile_shape_;
   Coord2u table_shape_;
-  sf::Texture* texture_;
+  sf::Texture* texture_ = nullptr;
 };
