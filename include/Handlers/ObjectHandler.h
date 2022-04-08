@@ -2,15 +2,12 @@
 // Created by profidoc on 20.03.2022.
 //
 
-#ifndef TP_SOURCES_OBJECTHANDLER_H_
-#define TP_SOURCES_OBJECTHANDLER_H_
+#pragma once
+#include "include/Entities/MainCharacter.h"
+#include "include/drawing/Drawer.h"
 
 class ObjectHandler {
  public:
-
-
- private:
-
+  void InitTargets(Drawer& drawer);
+  MainCharacter main_character;  // TODO: use Creator
 };
-
-#endif //TP_SOURCES_OBJECTHANDLER_H_
