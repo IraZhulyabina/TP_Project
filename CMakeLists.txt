@@ -24,7 +24,7 @@ set(SOURCES
         sources/Entities/Enemy.cpp
         sources/Entities/Physics.cpp
         sources/Handlers/WindowHandler.cpp
-        sources/drawing/TileSet.cpp include/drawing/TexturePack.cpp include/drawing/TexturePack.h)
+        sources/drawing/TileSet.cpp sources/drawing/TexturePack.cpp include/drawing/TexturePack.h)
 
 find_package(SFML 2.5 COMPONENTS graphics audio REQUIRED)
 
