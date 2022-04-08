@@ -12,7 +12,7 @@ TexturePackResources::TileSetNames Drawable::GetTileSetName() const {
   return tile_set_name_;
 }
 
-const Coord2f& Drawable::GetPosition() {
+const Coord2f& Drawable::GetSpritePosition() {
   return sprite_.getPosition();
 }
 
@@ -23,6 +23,8 @@ void Drawable::SetTileSet(TileSet& tile_set) {
 void Drawable::InitDrawable(TexturePack *texture_pack, TileSet tile_set) {
   SetTileSet(tile_set);
   SetTexturePack(texture_pack);
+  ApplyTexture();
+  UpdateSpriteTexture();
 }
 
 void Drawable::SetTexturePack(TexturePack *texture_pack) {
@@ -38,6 +40,8 @@ void Drawable::ApplyTexture() {
   sprite_.setTexture(*texture_pack_->GetTexture());
 }
 
-void Drawable::SetPosition(Coord2f pos) {
+void Drawable::SetSpritePosition(Coord2f pos) {
   sprite_.setPosition(pos);
 }
+
+void Drawable::DrawingUpdate() {}
