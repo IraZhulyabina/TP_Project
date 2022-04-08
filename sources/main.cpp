@@ -1,7 +1,4 @@
-#include <iostream>
 #include "../include/Game.h"
-#include <SFML/Graphics.hpp>
-#include "../include/main.h"
 
 int main() {
   Game game;
