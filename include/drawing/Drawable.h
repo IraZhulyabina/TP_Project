@@ -26,7 +26,7 @@ class Drawable {
   void SetTileSet(TileSet& tile_set);
   void SetTexturePack(TexturePack* texture_pack);
 
-  TexturePackResources::TileSetNames tile_set_name_;
+  const TexturePackResources::TileSetNames tile_set_name_;
   TileSet tile_set_;
   TexturePack* texture_pack_ = nullptr;
   sf::Sprite sprite_;
