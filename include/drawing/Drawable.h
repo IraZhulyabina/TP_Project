@@ -3,7 +3,6 @@
 //
 
 #pragma once
-#include <SFML/Graphics.hpp>
 #include "include/main.h"
 #include "include/drawing/TexturePack.h"
 #include "include/drawing/TileSet.h"
@@ -12,21 +11,23 @@
 class Drawable {
  public:
   sf::Sprite& GetSprite();
-  const Coord2f& GetPosition();
-  void SetPosition(Coord2f pos);
-
+  virtual void DrawingUpdate();
   TexturePackResources::TileSetNames GetTileSetName() const;
   void InitDrawable(TexturePack* texture_pack, TileSet tile_set);
-  virtual void Update() = 0;
+
+ protected:
+  const Coord2f& GetSpritePosition();
+  void SetSpritePosition(Coord2f pos);
+
+  TexturePackResources::TileSetNames tile_set_name_ =
+      TexturePackResources::TileSetNames::Nothing;
 
  private:
   void ApplyTexture();
   void UpdateSpriteTexture(); // TODO: update using time and state
-
   void SetTileSet(TileSet& tile_set);
   void SetTexturePack(TexturePack* texture_pack);
 
-  const TexturePackResources::TileSetNames tile_set_name_;
   TileSet tile_set_;
   TexturePack* texture_pack_ = nullptr;
   sf::Sprite sprite_;
