@@ -9,5 +9,8 @@
 class ObjectHandler {
  public:
   void InitTargets(Drawer& drawer);
-  MainCharacter main_character;  // TODO: use Creator
+  const MainCharacter& GetMainCharacter() const;
+
+ private:
+  MainCharacter main_character_;  // TODO: use Creator
 };

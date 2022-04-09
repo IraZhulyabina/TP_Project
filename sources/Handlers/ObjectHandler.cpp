@@ -5,7 +5,9 @@
 #include "include/Handlers/ObjectHandler.h"
 
 void ObjectHandler::InitTargets(Drawer& drawer) {
-  Drawable& drawable_part = main_character;
+  drawer.AddTarget(&main_character_);
+}
 
-  drawer.AddTarget(&drawable_part);
+const MainCharacter& ObjectHandler::GetMainCharacter() const {
+  return main_character_;
 }
