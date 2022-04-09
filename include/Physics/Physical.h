@@ -5,7 +5,7 @@
 #ifndef TP_SOURCES_ENTITIES_PHYSICS_H_
 #define TP_SOURCES_ENTITIES_PHYSICS_H_
 
-class Physics {
+class Physical {
 
 };
 
