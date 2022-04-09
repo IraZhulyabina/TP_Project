@@ -22,7 +22,7 @@ set(SOURCES
         sources/Entities/Chest.cpp
         sources/Entities/MainCharacter.cpp
         sources/Entities/Enemy.cpp
-        sources/Entities/Physics.cpp
+        sources/Physics/Physical.cpp
         sources/Handlers/WindowHandler.cpp
         sources/drawing/TileSet.cpp
         sources/drawing/TexturePack.cpp)
