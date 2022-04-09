@@ -4,11 +4,10 @@
 
 #pragma once
 #include "Handlers/EventHandler.h"
-#include "Handlers/ObjectHandler.h"
-#include "include/drawing/Drawer.h"
 #include "Handlers/MapHandler.h"
+#include "Handlers/ObjectHandler.h"
 #include "Handlers/WindowHandler.h"
-
+#include "include/drawing/Drawer.h"
 
 class Game {
  public:
@@ -16,10 +15,10 @@ class Game {
 
   bool Init();
   bool HandleEvents();
-//  void UpdatePhysics();
+  //  void UpdatePhysics();
   void UpdateGraphics();
   void Draw();
-//  bool EndGame();
+  //  bool EndGame();
 
   bool IsRunning() const;
   bool IsWindowOpened();
@@ -31,5 +30,5 @@ class Game {
   Drawer drawer_;
   WindowHandler window_handler_;
 
-  bool is_running = false;
+  bool is_running_ = false;
 };

@@ -12,17 +12,16 @@ bool Game::Init() {
   return true;
 }
 
-Game::Game() {
-  is_running = true;
+Game::Game() { is_running_ = true;
 }
 
 bool Game::IsRunning() const {
-  return is_running;
+  return is_running_;
 }
 
 bool Game::HandleEvents() {
-  is_running = is_running && event_handler_.WindowEvents(window_handler_);
-  return is_running;
+  is_running_ = is_running_ && event_handler_.WindowEvents(window_handler_);
+  return is_running_;
 }
 
 bool Game::IsWindowOpened() {
