@@ -2,11 +2,13 @@
 // Created by profidoc on 20.03.2022.
 //
 
-#include "../include/Game.h"
+#include "include/Game.h"
 bool Game::Init() {
   window_handler_.InitWindow({800, 800}, "Game");
   // TODO make loadable settings of window
   window_handler_.GetWindow().setVerticalSyncEnabled(true);
+  drawer_.Init();  // TODO: catch exceptions
+  object_handler_.InitTargets(drawer_);
   return true;
 }
 
@@ -25,4 +27,14 @@ bool Game::HandleEvents() {
 
 bool Game::IsWindowOpened() {
   return window_handler_.IsOpen();
+}
+
+void Game::UpdateGraphics() {
+  drawer_.UpdateTargets();
+}
+
+void Game::Draw() {
+  window_handler_.GetWindow().clear();  // TODO Make API
+  drawer_.DrawEntities(window_handler_.GetWindow());
+  window_handler_.GetWindow().display();  // TODO make API
 }

@@ -2,12 +2,15 @@
 // Created by profidoc on 20.03.2022.
 //
 
-#ifndef TP_SOURCES_ENTITIES_MAINCHARACTER_H_
+#pragma once
 #include "Entity.h"
-#define TP_SOURCES_ENTITIES_MAINCHARACTER_H_
+#include "include/drawing/Drawable.h"
 
-class MainCharacter: public Entity {
+class MainCharacter: public Entity, public Drawable {
+ public:
+  MainCharacter();
+
+ private:
+  void DrawingUpdate() override;
 
 };
-
-#endif //TP_SOURCES_ENTITIES_MAINCHARACTER_H_
