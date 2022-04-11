@@ -4,7 +4,7 @@
 
 #ifndef TP_SOURCES_HANDLERS_WINDOWHANDLER_H_
 #include "SFML/Graphics.hpp"
-#include "../main.h"
+#include "include/BasicStructs/structs.h"
 #include "string"
 #define TP_SOURCES_HANDLERS_WINDOWHANDLER_H_
 

@@ -2,9 +2,9 @@
 // Created by profidoc on 20.03.2022.
 //
 
-#include "../../include/Handlers/EventHandler.h"
+#include "include/Handlers/EventHandler.h"
 
-bool EventHandler::WindowEvents(WindowHandler &window_handler) {
+bool EventHandler::WindowEvents(WindowHandler& window_handler) {
   auto& window = window_handler.GetWindow();
   sf::Event event;
   while (window.pollEvent(event)) {

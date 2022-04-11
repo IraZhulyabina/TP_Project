@@ -4,7 +4,7 @@
 
 #pragma once
 #include "map"
-#include "include/main.h"
+#include "include/BasicStructs/structs.h"
 #include "string"
 #include <SFML/Graphics/Image.hpp>
 #include <SFML/Graphics/Texture.hpp>

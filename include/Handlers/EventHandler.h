@@ -2,10 +2,10 @@
 // Created by profidoc on 20.03.2022.
 //
 
-#ifndef TP_SOURCES_EVENTHANDLER_H_
+#pragma once
 #include "SFML/Graphics.hpp"
 #include "WindowHandler.h"
-#define TP_SOURCES_EVENTHANDLER_H_
+#include "ObjectHandler.h"
 
 class EventHandler {
  public:
