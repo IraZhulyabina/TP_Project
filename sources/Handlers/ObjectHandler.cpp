@@ -4,10 +4,11 @@
 
 #include "include/Handlers/ObjectHandler.h"
 
-void ObjectHandler::InitTargets(Drawer& drawer) {
+void ObjectHandler::InitTargets(Drawer& drawer, PhysicsEngine& physics_engine) {
   drawer.AddTarget(&main_character_);
+  physics_engine.AddTarget(&main_character_);
 }
 
-const MainCharacter& ObjectHandler::GetMainCharacter() const {
+MainCharacter& ObjectHandler::GetMainCharacter() {
   return main_character_;
 }
