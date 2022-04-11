@@ -32,3 +32,7 @@ void MainCharacter::SetPosition(const Coord2f& position) {
 void MainCharacter::SetSpeed(float speed) {
   PhysicalEntity::speed_ = speed;  // TODO: make API
 }
+
+void MainCharacter::Draw(sf::RenderWindow& window) {
+  window.draw(GetSprite());
+}
