@@ -10,9 +10,8 @@
 class EventHandler {
  public:
   bool WindowEvents(WindowHandler &window_handler);  //TODO close window e.t.c.
-  void PlayerInteract();  // TODO keyboard and mouse interaction
+  bool PlayerInteract(ObjectHandler& object_handler);
+  // TODO keyboard and mouse interaction
   void TimerInteraction();  // TODO events of timer
 
 };
-
-#endif //TP_SOURCES_EVENTHANDLER_H_
