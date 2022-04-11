@@ -3,7 +3,7 @@
 //
 
 #pragma once
-#include "include/main.h"
+#include "include/BasicStructs/structs.h"
 
 class TileSet {  // интерфейс к текстурпаку, вырезающий нужный кусок
  public:

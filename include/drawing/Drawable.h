@@ -3,7 +3,7 @@
 //
 
 #pragma once
-#include "include/main.h"
+#include "include/BasicStructs/structs.h"
 #include "include/drawing/TexturePack.h"
 #include "include/drawing/TileSet.h"
 #include "resources/headers/TexturePacksResources.h"
@@ -31,5 +31,4 @@ class Drawable {
   TileSet tile_set_;
   TexturePack* texture_pack_ = nullptr;
   sf::Sprite sprite_;
-  // Coord2f position_;
 };

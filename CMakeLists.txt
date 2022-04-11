@@ -5,6 +5,7 @@ set(CMAKE_CXX_STANDARD 17)
 
 set(SOURCES
         sources/main.cpp
+        sources/BasicStructs/structs.cpp
         sources/Game.cpp
         sources/Handlers/EventHandler.cpp
         sources/Handlers/ObjectHandler.cpp
@@ -22,13 +23,14 @@ set(SOURCES
         sources/Entities/Chest.cpp
         sources/Entities/MainCharacter.cpp
         sources/Entities/Enemy.cpp
-        sources/Entities/Physics.cpp
+        sources/Physics/PhysicalEntity.cpp
         sources/Handlers/WindowHandler.cpp
         sources/drawing/TileSet.cpp
-        sources/drawing/TexturePack.cpp)
+        sources/drawing/TexturePack.cpp
+        resources/sources/Kinematics.cpp)
 
 find_package(SFML 2.5 COMPONENTS graphics audio REQUIRED)
 
 add_executable(MainBuild ${SOURCES})
-target_link_libraries(MainBuild sfml-graphics sfml-audio)
+target_link_libraries(MainBuild sfml-graphics sfml-audio sfml-system)
 target_include_directories(MainBuild PRIVATE ${PROJECT_SOURCE_DIR})

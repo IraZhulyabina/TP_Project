@@ -1,11 +1,17 @@
-#include "../include/Game.h"
+#include "include/Game.h"
 
 int main() {
   Game game;
   game.Init();
 
   while (game.IsWindowOpened() && game.IsRunning()) {
-    if(!game.HandleEvents()) continue;
+    game.FrameStart();
+
+    if (!game.HandleEvents()) {
+      continue;
+    }
+
+    game.UpdatePhysics();
     game.UpdateGraphics();
     game.Draw();
   }
