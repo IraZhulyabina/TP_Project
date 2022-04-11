@@ -8,7 +8,7 @@ bool Game::Init() {
   // TODO make loadable settings of window
   window_handler_.GetWindow().setVerticalSyncEnabled(true);
   drawer_.Init();  // TODO: catch exceptions
-  object_handler_.InitTargets(drawer_);
+  object_handler_.InitTargets(drawer_, physics_engine_);
   return true;
 }
 
@@ -21,6 +21,7 @@ bool Game::IsRunning() const {
 
 bool Game::HandleEvents() {
   is_running_ = is_running_ && event_handler_.WindowEvents(window_handler_);
+  is_running_ = is_running_ && event_handler_.PlayerInteract(object_handler_);
   return is_running_;
 }
 
@@ -36,4 +37,14 @@ void Game::Draw() {
   window_handler_.GetWindow().clear();  // TODO Make API
   drawer_.DrawEntities(window_handler_.GetWindow());
   window_handler_.GetWindow().display();  // TODO make API
+}
+
+void Game::FrameStart() {
+  frame_time_ = main_clock_.getElapsedTime().asMilliseconds();
+  main_clock_.restart();
+  // TODO: make a reliable mechanism to increase accuracy
+}
+
+void Game::UpdatePhysics() {
+  physics_engine_.ProcessVelocities(frame_time_);
 }
