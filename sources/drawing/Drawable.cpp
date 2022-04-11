@@ -44,4 +44,3 @@ void Drawable::SetSpritePosition(Coord2f pos) {
   sprite_.setPosition(pos);
 }
 
-void Drawable::DrawingUpdate() {}

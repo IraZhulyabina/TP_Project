@@ -31,5 +31,4 @@ class Drawable {
   TileSet tile_set_;
   TexturePack* texture_pack_ = nullptr;
   sf::Sprite sprite_;
-  // Coord2f position_;
 };
