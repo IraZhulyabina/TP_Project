@@ -2,9 +2,9 @@
 // Created by profidoc on 20.03.2022.
 //
 
-#ifndef TP_INCLUDE_MAIN_H_
+#pragma once
 #include <SFML/Graphics.hpp>
-#define TP_INCLUDE_MAIN_H_
+#include <math.h>
 
 using Coord2f = sf::Vector2f;
 using Coord2u = sf::Vector2u;
@@ -13,4 +13,6 @@ using Rect2f = sf::Rect<float>;
 using Rect2u = sf::Rect<uint32_t>;
 using Rect2i = sf::Rect<int32_t>;
 
-#endif //TP_INCLUDE_MAIN_H_
+float Coord2fAbs(const Coord2f& vect);
+float Rad(float angle);
+Coord2f UnitVector(float angle);

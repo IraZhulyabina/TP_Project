@@ -5,6 +5,7 @@ set(CMAKE_CXX_STANDARD 17)
 
 set(SOURCES
         sources/main.cpp
+        sources/BasicStructs/structs.cpp
         sources/Game.cpp
         sources/Handlers/EventHandler.cpp
         sources/Handlers/ObjectHandler.cpp

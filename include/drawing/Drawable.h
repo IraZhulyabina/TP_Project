@@ -3,7 +3,7 @@
 //
 
 #pragma once
-#include "include/main.h"
+#include "include/BasicStructs/structs.h"
 #include "include/drawing/TexturePack.h"
 #include "include/drawing/TileSet.h"
 #include "resources/headers/TexturePacksResources.h"
