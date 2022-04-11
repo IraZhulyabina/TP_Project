@@ -14,7 +14,9 @@ class PhysicalEntity : public Entity {
   bool Contains(Coord2f& point);
   bool Intersects(const PhysicalEntity& other);
   float GetSpeed() const;
+  void SetVelocity(const Coord2f& velocity_dir);
   const Coord2f & GetVelocityDirection() const;
+
 
  protected:
   void MovePhysical(const Coord2f& position);

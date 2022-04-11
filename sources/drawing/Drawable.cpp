@@ -43,4 +43,3 @@ void Drawable::ApplyTexture() {
 void Drawable::SetSpritePosition(Coord2f pos) {
   sprite_.setPosition(pos);
 }
-

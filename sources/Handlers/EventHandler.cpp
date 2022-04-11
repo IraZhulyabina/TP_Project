@@ -39,20 +39,21 @@ bool EventHandler::PlayerInteract(ObjectHandler& object_handler) {
   object_handler.GetMainCharacter().SetSpeed(0);
   const float kNewPlayerSpeed = 200 * kinematics::kSecondsInMillisecond;
   // TODO: // make a const
+  Coord2f velocity_dir = {0, 0};
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
-    object_handler.GetMainCharacter().SetRotation(0);
-    object_handler.GetMainCharacter().SetSpeed(kNewPlayerSpeed);
+    velocity_dir.x = 1;
   }
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
-    object_handler.GetMainCharacter().SetRotation(90);
-    object_handler.GetMainCharacter().SetSpeed(kNewPlayerSpeed);
+    velocity_dir.y = -1;
   }
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
-    object_handler.GetMainCharacter().SetRotation(180);
-    object_handler.GetMainCharacter().SetSpeed(kNewPlayerSpeed);
+    velocity_dir.x = -1;
   }
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
-    object_handler.GetMainCharacter().SetRotation(270);
+    velocity_dir.y = 1;
+  }
+  object_handler.GetMainCharacter().SetRotation(GetAngle(velocity_dir));
+  if (velocity_dir != Coord2f(0, 0)) {
     object_handler.GetMainCharacter().SetSpeed(kNewPlayerSpeed);
   }
   return true;

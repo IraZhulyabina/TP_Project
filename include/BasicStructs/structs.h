@@ -16,3 +16,4 @@ using Rect2i = sf::Rect<int32_t>;
 float Coord2fAbs(const Coord2f& vect);
 float Rad(float angle);
 Coord2f UnitVector(float angle);
+float GetAngle(const Coord2f& vect);
