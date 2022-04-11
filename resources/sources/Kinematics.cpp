@@ -20,6 +20,7 @@ kinematics::Orientation kinematics::AngleToOrientation(float angle) {
   }
   return Right;
 }
+
 float kinematics::FloatNegativeModuleDivision(float divisible, float divider) {
   return divisible - static_cast<int>(divisible / divider) * divider;
 }

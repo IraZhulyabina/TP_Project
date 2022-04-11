@@ -14,7 +14,7 @@ void Drawer::Init() {  // TODO: catching an exception from constructor
 
 void Drawer::AddTarget(Drawable* target) {
   auto type = target->GetTileSetName();
-  auto& texture_filename = TexturePackResources::filenames_map.at(type);
+  const auto& texture_filename = TexturePackResources::filenames_map.at(type);
   TileSet tile_set(TexturePackResources::sub_tables_map.at(type));
   target->InitDrawable(texture_packs_[texture_filename], tile_set);
   target->DrawingUpdate();

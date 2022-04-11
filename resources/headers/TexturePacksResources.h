@@ -6,6 +6,7 @@
 #define MySuperFile "/home/profidoc/ClionProjects/semestr2/TP/resources/textures/characters.png"
 // TODO: сделать нормальную загрузку этих данных из файла
 namespace TexturePackResources {
+
 enum TileSetNames {
   Enemy,
   Player,
@@ -29,7 +30,5 @@ const std::map<std::string, Coord2u> tables_map = {
 const std::vector<std::string> filenames {
     MySuperFile
 };
-
-
 
 }
