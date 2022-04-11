@@ -8,7 +8,10 @@
 #include "include/Entities/Entity.h"
 
 class PhysicsEngine {
+ public:
+  void AddTarget(PhysicalEntity* target);
+  void ProcessVelocities(float frame_time);
 
+ private:
+  std::vector<PhysicalEntity*> targets_;
 };
-
-#endif //TP_INCLUDE_PHYSICSENTITY_H_

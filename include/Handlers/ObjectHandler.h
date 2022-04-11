@@ -5,6 +5,7 @@
 #pragma once
 #include "include/Entities/MainCharacter.h"
 #include "include/drawing/Drawer.h"
+#include "include/Physics/PhysicsEngine.h"
 
 class ObjectHandler {
  public:
