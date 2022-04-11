@@ -5,7 +5,13 @@ int main() {
   game.Init();
 
   while (game.IsWindowOpened() && game.IsRunning()) {
-    if(!game.HandleEvents()) continue;
+    game.FrameStart();
+
+    if (!game.HandleEvents()) {
+      continue;
+    }
+
+    game.UpdatePhysics();
     game.UpdateGraphics();
     game.Draw();
   }
