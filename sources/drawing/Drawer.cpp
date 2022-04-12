@@ -23,7 +23,7 @@ void Drawer::AddTarget(Drawable* target) {
 
 void Drawer::DrawEntities(sf::RenderWindow& window) {
   for (Drawable* target : targets_) {
-    window.draw(target->GetSprite());
+    target->Draw(window);
   }
 }
 

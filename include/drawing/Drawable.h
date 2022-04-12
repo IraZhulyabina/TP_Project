@@ -12,6 +12,7 @@ class Drawable {
  public:
   sf::Sprite& GetSprite();
   virtual void DrawingUpdate() = 0;
+  virtual void Draw(sf::RenderWindow&) = 0;
   TexturePackResources::TileSetNames GetTileSetName() const;
   void InitDrawable(TexturePack* texture_pack, TileSet tile_set);
 

@@ -15,7 +15,6 @@ MainCharacter::MainCharacter() {
 }
 
 void MainCharacter::SetRotation(float angle) {
-  velocity_direction_ = UnitVector(angle);
   orientation_ = kinematics::AngleToOrientation(angle);
 }
 
@@ -31,4 +30,8 @@ void MainCharacter::SetPosition(const Coord2f& position) {
 
 void MainCharacter::SetSpeed(float speed) {
   PhysicalEntity::speed_ = speed;  // TODO: make API
+}
+
+void MainCharacter::Draw(sf::RenderWindow& window) {
+  window.draw(GetSprite());
 }

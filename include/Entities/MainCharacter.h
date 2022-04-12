@@ -14,6 +14,7 @@ class MainCharacter: public PhysicalEntity, public Drawable {
   void SetRotation(float angle);
   void SetPosition(const Coord2f& position) override;
   void SetSpeed(float speed);
+  void Draw(sf::RenderWindow& window) override;
   virtual void Move(const Coord2f& delta) override;
 
  private:
