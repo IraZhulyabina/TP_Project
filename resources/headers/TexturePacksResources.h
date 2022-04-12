@@ -7,7 +7,6 @@
 #define MySuperFile "/home/profidoc/ClionProjects/semestr2/TP/resources/textures/characters_stay.png"
 // TODO: сделать нормальную загрузку этих данных из файла
 namespace TexturePackResources {
-
 enum TileSetNames {
   Enemy,
   Player,

@@ -7,19 +7,24 @@
 
 kinematics::Orientation kinematics::AngleToOrientation(float angle) {
   angle = FloatModule(angle, 360);
-  angle = FloatModule(angle + 360,360);
   angle += 45;
   std::cout << angle << std::endl;
 
 
   if (angle <= 90) {
+    return Right;
+  }
+  if (angle <= 145) {
     return Down;
   }
-  if (angle <= 180) {
+  if (angle <= 270) {
     return Left;
   }
-  if (angle <= 270) {
+  if (angle <= 315) {
     return Up;
   }
-  return Right;
+  if (angle <= 360) {
+    return Right;
+  }
+  return Stay;
 }

@@ -21,7 +21,7 @@ Coord2f UnitVector(float angle) {  // angle in degrees
 }
 
 float GetAngle(const Coord2f& vect) {
-  return Degrees(asin(vect.y / Coord2fAbs(vect)));
+  return Degrees(atan2(vect.y / Coord2fAbs(vect), vect.x / Coord2fAbs(vect)));
 }
 
 bool AreCounterclockwise(Coord2f& first_point, Coord2f& second_point,
