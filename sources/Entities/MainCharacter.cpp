@@ -15,7 +15,6 @@ MainCharacter::MainCharacter() {
 }
 
 void MainCharacter::SetRotation(float angle) {
-  velocity_direction_ = UnitVector(angle);
   orientation_ = kinematics::AngleToOrientation(angle);
 }
 

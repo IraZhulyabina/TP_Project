@@ -35,6 +35,9 @@ const Coord2f& PhysicalEntity::GetVelocityDirection() const {
 }
 void PhysicalEntity::SetVelocity(const Coord2f& velocity_dir) {
   float normalization_coefficient = Coord2fAbs(velocity_dir);
+  if (normalization_coefficient == 0) {
+    normalization_coefficient = 1;
+  }
   velocity_direction_.x = velocity_dir.x / normalization_coefficient;
   velocity_direction_.y = velocity_dir.y / normalization_coefficient;
 }

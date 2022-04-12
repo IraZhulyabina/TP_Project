@@ -41,18 +41,19 @@ bool EventHandler::PlayerInteract(ObjectHandler& object_handler) {
   // TODO: // make a const
   Coord2f velocity_dir = {0, 0};
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
-    velocity_dir.x = 1;
+    velocity_dir.x += 1;
   }
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
-    velocity_dir.y = -1;
+    velocity_dir.y += -1;
   }
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
-    velocity_dir.x = -1;
+    velocity_dir.x += -1;
   }
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
-    velocity_dir.y = 1;
+    velocity_dir.y += 1;
   }
   object_handler.GetMainCharacter().SetRotation(GetAngle(velocity_dir));
+  object_handler.GetMainCharacter().SetVelocity(velocity_dir);
   if (velocity_dir != Coord2f(0, 0)) {
     object_handler.GetMainCharacter().SetSpeed(kNewPlayerSpeed);
   }
