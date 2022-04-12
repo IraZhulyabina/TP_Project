@@ -7,6 +7,7 @@
 #include "include/drawing/TexturePack.h"
 #include "include/drawing/TileSet.h"
 #include "resources/headers/TexturePacksResources.h"
+#include "Animator.h"
 
 class Drawable {
  public:
@@ -14,7 +15,8 @@ class Drawable {
   virtual void DrawingUpdate() = 0;
   virtual void Draw(sf::RenderWindow&) = 0;
   TexturePackResources::TileSetNames GetTileSetName() const;
-  void InitDrawable(TexturePack* texture_pack, TileSet tile_set);
+  void InitDrawable(TexturePack* texture_pack, Animator animator);
+  bool IsAnimated() const;
 
  protected:
   const Coord2f& GetSpritePosition();
@@ -22,14 +24,16 @@ class Drawable {
 
   TexturePackResources::TileSetNames tile_set_name_ =
       TexturePackResources::TileSetNames::Nothing;
+  bool is_animated_ = false;
+  void UpdateAnimator(float frame_time);
+  void UpdateSpriteTexture(); // TODO: update using time and state
 
  private:
   void ApplyTexture();
-  void UpdateSpriteTexture(); // TODO: update using time and state
-  void SetTileSet(TileSet& tile_set);
+  void SetAnimator(Animator& tile_set);
   void SetTexturePack(TexturePack* texture_pack);
 
-  TileSet tile_set_;
+  Animator animator_;
   TexturePack* texture_pack_ = nullptr;
   sf::Sprite sprite_;
 };

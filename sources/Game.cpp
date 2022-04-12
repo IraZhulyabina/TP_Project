@@ -29,9 +29,7 @@ bool Game::IsWindowOpened() {
   return window_handler_.IsOpen();
 }
 
-void Game::UpdateGraphics() {
-  drawer_.UpdateTargets();
-}
+void Game::UpdateGraphics() { drawer_.UpdateTargets(frame_time_); }
 
 void Game::Draw() {
   window_handler_.GetWindow().clear();  // TODO Make API

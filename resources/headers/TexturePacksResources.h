@@ -31,4 +31,6 @@ const std::vector<std::string> filenames {
     MySuperFile
 };
 
+const float kNormalFramesPerSecond = 3.0;
+
 }

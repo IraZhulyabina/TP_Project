@@ -27,7 +27,8 @@ set(SOURCES
         sources/Handlers/WindowHandler.cpp
         sources/drawing/TileSet.cpp
         sources/drawing/TexturePack.cpp
-        resources/sources/Kinematics.cpp)
+        resources/sources/Kinematics.cpp
+        sources/drawing/Animator.cpp)
 
 find_package(SFML 2.5 COMPONENTS graphics audio REQUIRED)
 
