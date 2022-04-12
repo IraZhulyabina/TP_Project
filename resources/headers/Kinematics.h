@@ -12,7 +12,7 @@ const float kMilliSecondsInSecond = 1e3;
 
 enum Orientation { Stay, Down, Left, Right, Up };
 
-float FloatNegativeModuleDivision(float divisible, float divider);
+
 Orientation AngleToOrientation(float angle);
 
 }  // namespace kinematics

@@ -8,8 +8,6 @@
 kinematics::Orientation kinematics::AngleToOrientation(float angle) {
   angle = FloatModule(angle, 360);
   angle += 45;
-  std::cout << angle << std::endl;
-
 
   if (angle <= 90) {
     return Right;
