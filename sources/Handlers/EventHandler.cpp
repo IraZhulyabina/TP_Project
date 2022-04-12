@@ -44,13 +44,13 @@ bool EventHandler::PlayerInteract(ObjectHandler& object_handler) {
     velocity_dir.x += 1;
   }
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) {
-    velocity_dir.y += -1;
+    velocity_dir.y += 1;
   }
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) {
     velocity_dir.x += -1;
   }
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) {
-    velocity_dir.y += 1;
+    velocity_dir.y += -1;
   }
   object_handler.GetMainCharacter().SetRotation(GetAngle(velocity_dir));
   object_handler.GetMainCharacter().SetVelocity(velocity_dir);
