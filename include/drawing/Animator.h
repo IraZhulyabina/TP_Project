@@ -5,6 +5,7 @@
 #pragma once
 #include "include/drawing/TileSet.h"
 #include "SFML/System/Clock.hpp"
+#include "resources/headers/Kinematics.h"
 
 class Animator : public TileSet {
  public:
