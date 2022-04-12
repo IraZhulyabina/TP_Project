@@ -21,6 +21,7 @@ class Drawable {
  protected:
   const Coord2f& GetSpritePosition();
   void SetSpritePosition(Coord2f pos);
+  void SetState(uint32_t state_sub_coordinate_y);
 
   TexturePackResources::TileSetNames tile_set_name_ =
       TexturePackResources::TileSetNames::Nothing;

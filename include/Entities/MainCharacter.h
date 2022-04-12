@@ -19,5 +19,5 @@ class MainCharacter: public PhysicalEntity, public Drawable {
   void Move(const Coord2f& delta) override;
 
  private:
-  kinematics::Orientation orientation_ = kinematics::Orientation::Left;
+  kinematics::Orientation orientation_ = kinematics::Orientation::Down;
 };

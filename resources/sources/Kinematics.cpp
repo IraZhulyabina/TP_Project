@@ -3,11 +3,14 @@
 //
 
 #include "resources/headers/Kinematics.h"
+#include "iostream"
 
 kinematics::Orientation kinematics::AngleToOrientation(float angle) {
   angle = FloatModule(angle, 360);
   angle = FloatModule(angle + 360,360);
   angle += 45;
+  std::cout << angle << std::endl;
+
 
   if (angle <= 90) {
     return Down;
@@ -16,7 +19,7 @@ kinematics::Orientation kinematics::AngleToOrientation(float angle) {
     return Left;
   }
   if (angle <= 270) {
-    return Top;
+    return Up;
   }
   return Right;
 }

@@ -18,6 +18,7 @@ MainCharacter::MainCharacter() {
 
 void MainCharacter::SetRotation(float angle) {
   orientation_ = kinematics::AngleToOrientation(angle);
+  Drawable::SetState(TexturePackResources::moving_states.at(orientation_));
 }
 
 void MainCharacter::Move(const Coord2f& delta) {

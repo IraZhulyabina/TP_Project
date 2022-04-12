@@ -10,14 +10,9 @@ namespace kinematics {
 const float kSecondsInMillisecond = 1e-3;
 const float kMilliSecondsInSecond = 1e3;
 
-enum Orientation {
-  Top,
-  Right,
-  Down,
-  Left
-};
+enum Orientation { Stay, Down, Left, Right, Up };
 
 float FloatNegativeModuleDivision(float divisible, float divider);
 Orientation AngleToOrientation(float angle);
 
-}
+}  // namespace kinematics

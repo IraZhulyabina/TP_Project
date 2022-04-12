@@ -40,3 +40,7 @@ bool Drawable::IsAnimated() const { return is_animated_; }
 void Drawable::UpdateAnimator(float frame_time) {
   animator_.Update(frame_time);
 }
+
+void Drawable::SetState(uint32_t state_sub_coordinate_y) {
+  animator_.SetState(state_sub_coordinate_y);
+}
