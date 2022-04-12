@@ -25,4 +25,7 @@ class Segment {
 float Coord2fAbs(const Coord2f& vect);
 float Rad(float angle);
 Coord2f UnitVector(float angle);
+
+float FloatModule(float divisible, float divider);
+
 float GetAngle(const Coord2f& vect);

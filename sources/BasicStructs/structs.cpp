@@ -19,6 +19,7 @@ float Degrees(float angle) {
 Coord2f UnitVector(float angle) {  // angle in degrees
   return {cos(Rad(angle)), sin(Rad(angle))};
 }
+
 float GetAngle(const Coord2f& vect) {
   return Degrees(asin(vect.y / Coord2fAbs(vect)));
 }
@@ -47,4 +48,8 @@ bool Segment::Intersects(Segment& other) {
                                            bottom_right_position_,
                                            other.bottom_right_position_);
   return are_in_different_order_first && are_in_different_order_second;
+}
+
+float FloatModule(float divisible, float divider) {
+  return divisible - floor(divisible / divider) * divider;
 }
