@@ -7,5 +7,5 @@
 
 class MapLoader{
  public:
-  void LoadMap(const std::string& path);
+  std::vector<std::vector<ssize_t>> LoadMap(const std::string& path);
 };

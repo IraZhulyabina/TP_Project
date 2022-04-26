@@ -3,4 +3,5 @@
 //
 #include "include/MapHandling/MapLoader.h"
 
-void MapLoader::LoadMap(const std::string& path) {}
+std::vector<std::vector<ssize_t>> MapLoader::LoadMap(const std::string& path) {
+}
