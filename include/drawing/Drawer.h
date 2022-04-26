@@ -16,7 +16,7 @@ class Drawer {
   void Init();
   void AddTarget(Drawable* target);
   void DrawEntities(sf::RenderWindow& window);
-  void UpdateTargets();
+  void UpdateTargets(float frame_time);
 
  private:
   std::map<std::string, TexturePack*> texture_packs_;

@@ -8,24 +8,11 @@
 namespace kinematics {
 
 const float kSecondsInMillisecond = 1e-3;
+const float kMilliSecondsInSecond = 1e3;
 
-const float kMainCharacterVelocity = kSecondsInMillisecond * 30;
+enum Orientation { Stay, Down, Left, Right, Up };
 
-enum Orientation {
-  Top,
-  Right,
-  Down,
-  Left
-};
 
-const std::map<Orientation, Coord2f> velocities = {
-    { Top, UnitVector(-90) },
-    { Right, UnitVector(0) },
-    { Down, UnitVector(90) },
-    { Left, UnitVector(180) },
-};
-
-float FloatNegativeModuleDivision(float divisible, float divider);
 Orientation AngleToOrientation(float angle);
 
-}
+}  // namespace kinematics

@@ -3,23 +3,26 @@
 //
 
 #include "resources/headers/Kinematics.h"
+#include "iostream"
 
 kinematics::Orientation kinematics::AngleToOrientation(float angle) {
-  angle = FloatNegativeModuleDivision(angle, 360);
-  angle = FloatNegativeModuleDivision(angle + 360,360);
+  angle = FloatModule(angle, 360);
   angle += 45;
 
   if (angle <= 90) {
+    return Right;
+  }
+  if (angle <= 145) {
     return Down;
   }
-  if (angle <= 180) {
+  if (angle <= 270) {
     return Left;
   }
-  if (angle <= 270) {
-    return Top;
+  if (angle <= 315) {
+    return Up;
   }
-  return Right;
-}
-float kinematics::FloatNegativeModuleDivision(float divisible, float divider) {
-  return divisible - static_cast<int>(divisible / divider) * divider;
+  if (angle <= 360) {
+    return Right;
+  }
+  return Stay;
 }

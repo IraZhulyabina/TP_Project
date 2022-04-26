@@ -19,6 +19,37 @@ float Degrees(float angle) {
 Coord2f UnitVector(float angle) {  // angle in degrees
   return {cos(Rad(angle)), sin(Rad(angle))};
 }
+
 float GetAngle(const Coord2f& vect) {
-  return Degrees(asin(vect.y / Coord2fAbs(vect)));
+  return Degrees(atan2(vect.y / Coord2fAbs(vect), vect.x / Coord2fAbs(vect)));
+}
+
+bool AreCounterclockwise(Coord2f& first_point, Coord2f& second_point,
+                         Coord2f& third_point) {
+  return (second_point.y - first_point.y) * (third_point.x - first_point.x) <
+         (third_point.y - first_point.y) * (second_point.x - first_point.x);
+}
+
+bool Segment::Intersects(Segment& other) {
+  bool are_in_different_order_first = AreCounterclockwise(
+                                          top_left_position_,
+                                          other.top_left_position_,
+                                          other.bottom_right_position_) !=
+                                      AreCounterclockwise(
+                                          bottom_right_position_,
+                                          other.top_left_position_,
+                                          other.bottom_right_position_);
+  bool are_in_different_order_second = AreCounterclockwise(
+                                           top_left_position_,
+                                           bottom_right_position_,
+                                           other.top_left_position_) !=
+                                       AreCounterclockwise(
+                                           bottom_right_position_,
+                                           bottom_right_position_,
+                                           other.bottom_right_position_);
+  return are_in_different_order_first && are_in_different_order_second;
+}
+
+float FloatModule(float divisible, float divider) {
+  return divisible - floor(divisible / divider) * divider;
 }

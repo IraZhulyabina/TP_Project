@@ -12,9 +12,7 @@ class TileSet {  // интерфейс к текстурпаку, вырезаю
   const Coord2u& GetSubTableCoords() const;
   //  TODO: iterator for Shapes
 
- private:
-  Rect2u sub_table_ = {0, 0, 0, 0};
+ protected:
+  Rect2u sub_table_ = {0, 0, 1, 1};
   Coord2u cur_rect_coords_ = {0, 0};  // TODO: make an iterator, not a field
 };
-
-

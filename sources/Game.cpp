@@ -12,12 +12,9 @@ bool Game::Init() {
   return true;
 }
 
-Game::Game() { is_running_ = true;
-}
+Game::Game() { is_running_ = true; }
 
-bool Game::IsRunning() const {
-  return is_running_;
-}
+bool Game::IsRunning() const { return is_running_; }
 
 bool Game::HandleEvents() {
   is_running_ = is_running_ && event_handler_.WindowEvents(window_handler_);
@@ -25,13 +22,9 @@ bool Game::HandleEvents() {
   return is_running_;
 }
 
-bool Game::IsWindowOpened() {
-  return window_handler_.IsOpen();
-}
+bool Game::IsWindowOpened() { return window_handler_.IsOpen(); }
 
-void Game::UpdateGraphics() {
-  drawer_.UpdateTargets();
-}
+void Game::UpdateGraphics() { drawer_.UpdateTargets(frame_time_); }
 
 void Game::Draw() {
   window_handler_.GetWindow().clear();  // TODO Make API
@@ -45,6 +38,4 @@ void Game::FrameStart() {
   // TODO: make a reliable mechanism to increase accuracy
 }
 
-void Game::UpdatePhysics() {
-  physics_engine_.ProcessVelocities(frame_time_);
-}
+void Game::UpdatePhysics() { physics_engine_.ProcessVelocities(frame_time_); }
