@@ -3,9 +3,6 @@
 //
 #include "include/drawing/AnimatedDrawable.h"
 
-void AnimatedDrawable::Update(float frame_time) {
-  animator_.Update(frame_time);
-}
 
 void AnimatedDrawable::InitAnimator(const Rect2u& sub_table, float fps) {
   animator_ = Animator(sub_table, fps);

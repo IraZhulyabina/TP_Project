@@ -5,7 +5,7 @@
 #pragma once
 #include "include/drawing/BasicDrawable.h"
 
-class UpdatableDrawable : BasicDrawable {
+class UpdatableDrawable : public BasicDrawable {
  public:
-  virtual void UpdateDrawable(float frame_time) = 0;
+  virtual void Update(float frame_time) = 0;
 };

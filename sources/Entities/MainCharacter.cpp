@@ -4,21 +4,20 @@
 
 #include "include/Entities/MainCharacter.h"
 
-void MainCharacter::DrawingUpdate(float frame_time) {
-  Drawable::SetSpritePosition(Entity::position_);
-  Drawable::UpdateAnimator(frame_time);
-  Drawable::UpdateSpriteTexture();
+void MainCharacter::Update(float frame_time) {
+  AnimatedDrawable::SetSpritePosition(Entity::position_);
+  BasicDrawable::UpdateSpriteTexture();
+  animator_.Update(frame_time);
 }
 
 MainCharacter::MainCharacter() {
-  Drawable::tile_set_name_ = TexturePackResources::Player;
+  BasicDrawable::tile_set_name_ = TexturePackResources::Player;
   Entity::position_ = {10, 10};  // TODO: move to ObjHandler
-  Drawable::is_animated_ = true;
 }
 
 void MainCharacter::SetRotation(float angle) {
   orientation_ = kinematics::AngleToOrientation(angle);
-  Drawable::SetState(TexturePackResources::moving_states.at(orientation_));
+  AnimatedDrawable::SetState(TexturePackResources::moving_states.at(orientation_));
 }
 
 void MainCharacter::Move(const Coord2f& delta) {

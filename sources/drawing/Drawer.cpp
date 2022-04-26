@@ -12,27 +12,29 @@ void Drawer::Init() {  // TODO: catching an exception from constructor
   }
 }
 
-void Drawer::AddTarget(Drawable* target) {
+void Drawer::AddTarget(BasicDrawable* target) {
   auto type = target->GetTileSetName();
   const auto& texture_filename = TexturePackResources::filenames_map.at(type);
-  Animator animator(TexturePackResources::sub_tables_map.at(type));
-  if (target->IsAnimated()) {
-    animator.SetFramesPerSecond(TexturePackResources::kNormalFramesPerSecond);
-  }
-  target->InitDrawable(texture_packs_[texture_filename], animator);
+  target->SetTexturePack(texture_packs_[texture_filename]);
   targets_.push_back(target);
 }
 
 void Drawer::DrawEntities(sf::RenderWindow& window) {
-  for (Drawable* target : targets_) {
+  for (BasicDrawable* target : targets_) {
     target->Draw(window);
   }
 }
 
 void Drawer::UpdateTargets(float frame_time) {
-  for (Drawable* target : targets_) {
-    if (target->IsAnimated()) {
-      target->DrawingUpdate(frame_time);
-    }
+  for (UpdatableDrawable* target : updatable_targets_) {
+    target->Update(frame_time);
   }
+}
+
+void Drawer::AddAnimatedTarget(AnimatedDrawable* target) {
+  auto type = target->GetTileSetName();
+  target->InitAnimator(TexturePackResources::sub_tables_map.at(type),
+                       TexturePackResources::kNormalFramesPerSecond);
+  // TODO: create a map for fps
+  updatable_targets_.push_back(target);
 }
