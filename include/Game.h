@@ -3,13 +3,14 @@
 //
 
 #pragma once
+#include <SFML/System/Clock.hpp>
+
 #include "Handlers/EventHandler.h"
-#include "Handlers/MapHandler.h"
 #include "Handlers/ObjectHandler.h"
 #include "Handlers/WindowHandler.h"
-#include "include/drawing/Drawer.h"
+#include "include/MapHandling/MapHandler.h"
 #include "include/Physics/PhysicsEngine.h"
-#include <SFML/System/Clock.hpp>
+#include "include/drawing/Drawer.h"
 
 class Game {
  public:
