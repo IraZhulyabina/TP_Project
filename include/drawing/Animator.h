@@ -3,11 +3,11 @@
 //
 
 #pragma once
-#include "include/drawing/TileSet.h"
+#include "include/drawing/TileRectController.h"
 #include "SFML/System/Clock.hpp"
 #include "resources/headers/Kinematics.h"
 
-class Animator : public TileSet {
+class Animator : public TileRectController {
  public:
   Animator() = default;
   Animator(const Rect2u& sub_table);
