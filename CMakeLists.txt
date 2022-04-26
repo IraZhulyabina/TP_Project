@@ -9,7 +9,7 @@ set(SOURCES
         sources/Game.cpp
         sources/Handlers/EventHandler.cpp
         sources/Handlers/ObjectHandler.cpp
-        sources/Handlers/MapHandler.cpp
+        sources/MapHandling/MapHandler.cpp
         sources/drawing/Drawer.cpp
         sources/drawing/Drawable.cpp
         sources/Handlers/PhysicsEngine.cpp

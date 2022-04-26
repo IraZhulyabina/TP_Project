@@ -11,11 +11,12 @@
 
 class Drawable {
  public:
-  sf::Sprite& GetSprite();
-  virtual void DrawingUpdate(float frame_time) = 0;
-  virtual void Draw(sf::RenderWindow&) = 0;
-  TexturePackResources::TileSetNames GetTileSetName() const;
   void InitDrawable(TexturePack* texture_pack, Animator animator);
+  virtual void Draw(sf::RenderWindow&) = 0;
+  virtual void DrawingUpdate(float frame_time) = 0;
+
+  sf::Sprite& GetSprite();
+  TexturePackResources::TileSetNames GetTileSetName() const;
   bool IsAnimated() const;
 
  protected:

@@ -10,9 +10,8 @@ class TileSet {  // интерфейс к текстурпаку, вырезаю
   TileSet() = default;
   explicit TileSet(const Rect2u& sub_table);
   const Coord2u& GetSubTableCoords() const;
-  //  TODO: iterator for Shapes
 
  protected:
   Rect2u sub_table_ = {0, 0, 1, 1};
-  Coord2u cur_rect_coords_ = {0, 0};  // TODO: make an iterator, not a field
+  Coord2u cur_rect_coords_ = {0, 0};
 };
