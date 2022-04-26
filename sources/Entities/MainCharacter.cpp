@@ -38,7 +38,3 @@ void MainCharacter::SetSpeed(float speed) {
 void MainCharacter::Draw(sf::RenderWindow& window) {
   window.draw(GetSprite());
 }
-
-void MainCharacter::Draw(sf::RenderWindow& window) {
-  window.draw(GetSprite());
-}
