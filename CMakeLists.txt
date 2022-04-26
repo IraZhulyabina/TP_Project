@@ -28,7 +28,7 @@ set(SOURCES
         sources/drawing/TileRectController.cpp
         sources/drawing/TexturePack.cpp
         resources/sources/Kinematics.cpp
-        sources/drawing/Animator.cpp sources/drawing/MapRectController.cpp include/drawing/MapRectController.h)
+        sources/drawing/Animator.cpp sources/drawing/MapRectController.cpp include/drawing/MapRectController.h include/drawing/UpdatableDrawable.h sources/drawing/AnimatedDrawable.cpp include/drawing/AnimatedDrawable.h)
 
 find_package(SFML 2.5 COMPONENTS graphics audio REQUIRED)
 

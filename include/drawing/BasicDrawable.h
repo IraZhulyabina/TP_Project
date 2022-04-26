@@ -25,8 +25,7 @@ class BasicDrawable {
 
   TexturePackResources::TileSetNames tile_set_name_ =
       TexturePackResources::TileSetNames::Nothing;
-  bool is_animated_ = false;
-  void UpdateSpriteTexture(); // TODO: update using time and state
+  void UpdateSpriteTexture();
 
  private:
   void ApplyTexture();
