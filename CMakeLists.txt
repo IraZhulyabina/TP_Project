@@ -30,7 +30,8 @@ set(SOURCES
         resources/sources/Kinematics.cpp
         sources/drawing/Animator.cpp
         sources/drawing/MapRectController.cpp
-        sources/drawing/AnimatedDrawable.cpp)
+        sources/drawing/AnimatedDrawable.cpp
+        sources/drawing/MapDrawer.cpp)
 
 find_package(SFML 2.5 COMPONENTS graphics audio REQUIRED)
 
