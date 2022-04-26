@@ -31,7 +31,7 @@ set(SOURCES
         sources/drawing/Animator.cpp
         sources/drawing/MapRectController.cpp
         sources/drawing/AnimatedDrawable.cpp
-        sources/drawing/MapDrawer.cpp)
+        sources/drawing/MapDrawer.cpp sources/MapHandling/MapLoader.cpp include/MapHandling/MapLoader.h)
 
 find_package(SFML 2.5 COMPONENTS graphics audio REQUIRED)
 
