@@ -28,10 +28,14 @@ set(SOURCES
         sources/drawing/TileRectController.cpp
         sources/drawing/TexturePack.cpp
         resources/sources/Kinematics.cpp
-        sources/drawing/Animator.cpp sources/drawing/MapRectController.cpp include/drawing/MapRectController.h include/drawing/UpdatableDrawable.h sources/drawing/AnimatedDrawable.cpp include/drawing/AnimatedDrawable.h)
+        sources/drawing/Animator.cpp
+        sources/drawing/MapRectController.cpp
+        sources/drawing/AnimatedDrawable.cpp)
 
 find_package(SFML 2.5 COMPONENTS graphics audio REQUIRED)
 
 add_executable(MainBuild ${SOURCES})
 target_link_libraries(MainBuild sfml-graphics sfml-audio sfml-system)
 target_include_directories(MainBuild PRIVATE ${PROJECT_SOURCE_DIR})
+
+install(DIRECTORY "resources/textures" DESTINATION ${PROJECT_BINARY_DIR})

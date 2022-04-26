@@ -5,8 +5,8 @@
 #pragma once
 #include "resources/headers/Kinematics.h"
 
-#define CharFile "resources/textures/characters_stay.png"
-#define MapGrassFile "resources/textures/MapTexture/TX_Tileset_Grass.png"
+#define CharFile "textures/characters_stay.png"
+#define MapGrassFile "textures/MapTexture/TX_Tileset_Grass.png"
 
 // TODO: сделать нормальную загрузку этих данных из файла
 namespace TexturePackResources {
