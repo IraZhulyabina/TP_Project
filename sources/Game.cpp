@@ -9,6 +9,8 @@ bool Game::Init() {
   window_handler_.GetWindow().setVerticalSyncEnabled(true);
   drawer_.Init();  // TODO: catch exceptions
   object_handler_.InitTargets(drawer_, physics_engine_);
+  map_handler_.Init();
+  map_handler_.AddToDrawer(drawer_);
   return true;
 }
 

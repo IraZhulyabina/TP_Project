@@ -18,6 +18,7 @@ class BasicDrawable {
 
  protected:
   sf::Sprite& GetSprite();
+  Coord2i GetTileShape();
   const Coord2f& GetSpritePosition();
   void SetSpritePosition(Coord2f pos);
   //void SetState(uint32_t state_sub_coordinate_y);

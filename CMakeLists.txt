@@ -31,7 +31,8 @@ set(SOURCES
         sources/drawing/Animator.cpp
         sources/drawing/MapRectController.cpp
         sources/drawing/AnimatedDrawable.cpp
-        sources/drawing/MapDrawer.cpp sources/MapHandling/MapLoader.cpp include/MapHandling/MapLoader.h)
+        sources/drawing/MapDrawer.cpp
+        sources/MapHandling/MapLoader.cpp)
 
 find_package(SFML 2.5 COMPONENTS graphics audio REQUIRED)
 
@@ -39,4 +40,5 @@ add_executable(MainBuild ${SOURCES})
 target_link_libraries(MainBuild sfml-graphics sfml-audio sfml-system)
 target_include_directories(MainBuild PRIVATE ${PROJECT_SOURCE_DIR})
 
-install(DIRECTORY "resources/textures" DESTINATION ${PROJECT_BINARY_DIR})
+install(DIRECTORY "resources/textures" "resources/maps" DESTINATION
+        ${PROJECT_BINARY_DIR})

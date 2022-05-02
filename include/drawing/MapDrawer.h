@@ -4,11 +4,20 @@
 
 #pragma once
 #include "include/drawing/BasicDrawable.h"
+#include "include/drawing/MapRectController.h"
+#include "resources/headers/TexturePacksResources.h"
+#include "resources/maps/FirstMap.h"
 
 class MapDrawer : public BasicDrawable {
  public:
-  std::vector<std::pair<Coord2u, uint32_t>>* GetObjectVector();
-  void SetObjectVector(std::vector<std::pair<Coord2u, uint32_t>>* pointer);
+  MapDrawer() = default;
+  void SetTextureType(TexturePackResources::TileSetNames type);
+  std::vector<std::pair<Coord2u, ssize_t>>* GetObjectVector();
+  void SetObjectVector(std::vector<std::pair<Coord2u, ssize_t>>* pointer);
+  void Draw(sf::RenderWindow& window) override;
+  TileRectController& GetRectController() override;
+
  protected:
-  std::vector<std::pair<Coord2u, uint32_t>>* objects_pointer_;
+  MapRectController map_rect_controller_;
+  std::vector<std::pair<Coord2u, ssize_t>>* objects_pointer_;
 };

@@ -29,6 +29,9 @@ void BasicDrawable::ApplyTexture() {
 }
 
 void BasicDrawable::SetSpritePosition(Coord2f pos) { sprite_.setPosition(pos); }
+Coord2i BasicDrawable::GetTileShape() {
+  return texture_pack_->GetTileShape();
+}
 
 /*void BasicDrawable::SetState(uint32_t state_sub_coordinate_y) {
   animator_.SetState(state_sub_coordinate_y);

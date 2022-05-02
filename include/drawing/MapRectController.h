@@ -5,8 +5,9 @@
 #pragma once
 #include "include/drawing/TileRectController.h"
 
-class MapRectController : TileRectController {
+class MapRectController : public TileRectController {
  public:
+  MapRectController() = default;
   MapRectController(const Rect2u& sub_table);
   void SetTileId(uint32_t tile_id);
  private:

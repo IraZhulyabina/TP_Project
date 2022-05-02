@@ -12,16 +12,18 @@ void Drawer::Init() {  // TODO: catching an exception from constructor
   }
 }
 
-void Drawer::AddTarget(BasicDrawable* target) {
+void Drawer::AddTarget(BasicDrawable* target, size_t layer) {
   auto type = target->GetTileSetName();
   const auto& texture_filename = TexturePackResources::filenames_map.at(type);
   target->SetTexturePack(texture_packs_[texture_filename]);
-  targets_.push_back(target);
+  targets_[layer].push_back(target);
 }
 
 void Drawer::DrawEntities(sf::RenderWindow& window) {
-  for (BasicDrawable* target : targets_) {
-    target->Draw(window);
+  for (auto& [layer, targets] : targets_) {
+    for (BasicDrawable* target : targets) {
+      target->Draw(window);
+    }
   }
 }
 
