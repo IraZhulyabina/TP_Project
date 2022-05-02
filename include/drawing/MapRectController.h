@@ -11,6 +11,7 @@ class MapRectController : public TileRectController {
   MapRectController(const Rect2u& sub_table);
   void SetTileId(uint32_t tile_id);
  private:
+  void UpdateSubTableCoords();
   uint32_t cur_tile_id_;
   Rect2u sub_table_;
 };

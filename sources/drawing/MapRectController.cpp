@@ -8,4 +8,10 @@ MapRectController::MapRectController(const Rect2u& sub_table)
 
 void MapRectController::SetTileId(uint32_t tile_id) {
   cur_tile_id_ = tile_id;
+  UpdateSubTableCoords();
+}
+void MapRectController::UpdateSubTableCoords() {
+  TileRectController::SetSubTableCoords(Coord2u(cur_tile_id_ % 16,
+                                                cur_tile_id_ / 16));
+  //TODO: make a constant
 }

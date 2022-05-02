@@ -10,12 +10,16 @@ void MapHandler::Init() {
        ++layer_index) {
     std::string cur_path = TileMap1::dir_path;
     cur_path += std::to_string(layer_index) + ".csv";
+    uint32_t max_x_coord = 0;
+    uint32_t max_y_coord = 0;
     std::vector<std::vector<ssize_t>> loaded = map_loader_.LoadMap(cur_path);
     for (uint32_t y = 0; y < loaded.size(); ++y) {
       for (uint32_t x = 0; x < loaded[y].size(); ++x) {
         if (loaded[y][x] == -1) {
           continue;
         }
+        max_x_coord = std::max(max_x_coord, x);
+        max_y_coord = std::max(max_y_coord, y);
         layers_vectors_[layer_index].push_back({{x, y}, loaded[y][x]});
       }
     }

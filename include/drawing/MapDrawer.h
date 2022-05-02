@@ -7,6 +7,7 @@
 #include "include/drawing/MapRectController.h"
 #include "resources/headers/TexturePacksResources.h"
 #include "resources/maps/FirstMap.h"
+#include <iostream>
 
 class MapDrawer : public BasicDrawable {
  public:
