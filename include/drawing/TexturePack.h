@@ -17,6 +17,7 @@ class TexturePack {  // носитель текстуры, то есть мно�
   ~TexturePack();
 
   sf::Texture* GetTexture() const;
+  const Coord2i& GetTileShape() const;
 
   Rect2i GetReact(Coord2u table_rect) const;
 

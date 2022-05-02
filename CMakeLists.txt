@@ -9,9 +9,9 @@ set(SOURCES
         sources/Game.cpp
         sources/Handlers/EventHandler.cpp
         sources/Handlers/ObjectHandler.cpp
-        sources/Handlers/MapHandler.cpp
+        sources/MapHandling/MapHandler.cpp
         sources/drawing/Drawer.cpp
-        sources/drawing/Drawable.cpp
+        sources/drawing/BasicDrawable.cpp
         sources/Handlers/PhysicsEngine.cpp
         sources/Creators/Creator.cpp
         sources/Creators/ButtonCreator.cpp
@@ -25,13 +25,20 @@ set(SOURCES
         sources/Entities/Enemy.cpp
         sources/Physics/PhysicalEntity.cpp
         sources/Handlers/WindowHandler.cpp
-        sources/drawing/TileSet.cpp
+        sources/drawing/TileRectController.cpp
         sources/drawing/TexturePack.cpp
         resources/sources/Kinematics.cpp
-        sources/drawing/Animator.cpp)
+        sources/drawing/Animator.cpp
+        sources/drawing/MapRectController.cpp
+        sources/drawing/AnimatedDrawable.cpp
+        sources/drawing/MapDrawer.cpp
+        sources/MapHandling/MapLoader.cpp)
 
 find_package(SFML 2.5 COMPONENTS graphics audio REQUIRED)
 
 add_executable(MainBuild ${SOURCES})
 target_link_libraries(MainBuild sfml-graphics sfml-audio sfml-system)
 target_include_directories(MainBuild PRIVATE ${PROJECT_SOURCE_DIR})
+
+install(DIRECTORY "resources/textures" "resources/maps" DESTINATION
+        ${PROJECT_BINARY_DIR})

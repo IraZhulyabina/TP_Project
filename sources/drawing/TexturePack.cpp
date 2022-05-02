@@ -27,3 +27,4 @@ TexturePack::TexturePack(const std::string &filename) {
 sf::Texture *TexturePack::GetTexture() const { return texture_; }
 
 TexturePack::~TexturePack() { delete texture_; }
+const Coord2i& TexturePack::GetTileShape() const { return tile_shape_; }

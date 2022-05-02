@@ -6,6 +6,7 @@
 
 void ObjectHandler::InitTargets(Drawer& drawer, PhysicsEngine& physics_engine) {
   drawer.AddTarget(&main_character_);
+  drawer.AddAnimatedTarget(&main_character_);
   physics_engine.AddTarget(&main_character_);
 }
 
