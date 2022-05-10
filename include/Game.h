@@ -1,41 +1,50 @@
 //
-// Created by profidoc on 20.03.2022.
+// Created by profidoc on 04.05.22.
 //
 
 #pragma once
-#include "Handlers/EventHandler.h"
-#include "Handlers/MapHandler.h"
-#include "Handlers/ObjectHandler.h"
-#include "Handlers/WindowHandler.h"
-#include "include/drawing/Drawer.h"
-#include "include/Physics/PhysicsEngine.h"
-#include <SFML/System/Clock.hpp>
+#include <cmath>
+
+#include "MainCharacter.h"
+#include "MainCharacterBuilder.h"
+#include "ObjectHandler.h"
+#include "SFMLWindowHandler.h"
+#include "SFML/Graphics.hpp"
+#include "SFMLDrawable.h"
+#include "SFMLEventHandler.h"
+#include "SFMLMapHandler.h"
+#include "PhysicsEngine.h"
+#include "TableAnimated.h"
+#include "TextureManager.h"
+#include "fstream"
+#include "iostream"
+#include "optional"
+#include "string"
+#include "random"
 
 class Game {
  public:
-  Game();
-
-  bool Init();
+  void Init();
   void FrameStart();
   bool HandleEvents();
-  void UpdatePhysics();
+  std::optional<bool> UpdatePhysics();
   void UpdateGraphics();
   void Draw();
-//  void FrameEnd();
-//  bool EndGame();
+  void FrameEnd();
 
+  bool IsWindowOpened() const;
   bool IsRunning() const;
-  bool IsWindowOpened();
 
  private:
-  MapHandler map_handler_;
-  EventHandler event_handler_;
+  TextureManager texture_manager_;
   ObjectHandler object_handler_;
-  PhysicsEngine physics_engine_;
-  Drawer drawer_;
-  WindowHandler window_handler_;
-  sf::Clock main_clock_;
-  float frame_time_ = 0;
 
+  sf::Clock main_clock_;
+  uint32_t frame_time_ = 0;
   bool is_running_ = false;
+
+  SFMLWindowHandler window_handler_;
+  SFMLEventHandler event_handler_;
+  SFMLMapHandler map_handler_;
+  PhysicsEngine physics_engine_;
 };
